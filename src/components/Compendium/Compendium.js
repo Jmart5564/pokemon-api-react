@@ -1,7 +1,18 @@
 import './Compendium.css';
+import usePokemon from '../../hooks/usePokemon';
 
 export default function Compendium() {
-  return <div>
+  const [loading, pokemon] = usePokemon();
 
+  if (loading) return <div className="loader"></div>;
+
+  return <div>
+    {pokemon.map((poke) => (
+      <div key={poke.id}>
+        <h1>{poke.pokemon}</h1>
+        <h3>{poke.type_1}</h3>
+        {poke.type_2 !== 'NA' && <h3>{poke.type_2}</h3>}
+      </div>
+    ))}
   </div>;
 }

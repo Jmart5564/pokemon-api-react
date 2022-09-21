@@ -2,12 +2,14 @@ import './Compendium.css';
 import usePokemon from '../../hooks/usePokemon';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import Select from '../../components/controls/Select';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function Compendium() {
-  const [loading, pokemon, types, setSelectedType] = usePokemon();
+  const [loading, pokemon, types, setSelectedType, setSearchQuery] = usePokemon();
 
   return <main>
     <div className='select'><Select options={types} changeHandler={setSelectedType}/></div>
+    <SearchBar searchHandler={setSearchQuery}/>
     {
       loading
         ? <div className='loader-container'><span className="loader"></span></div>

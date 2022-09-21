@@ -3,14 +3,16 @@ import { fetchPokemon, fetchTypes } from '../services/pokemon';
 
 export default function usePokemon() {
   const [pokemon, setPokemon] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
+    setLoading(true);
     const loadData = async () => {
       try {
-        const data = await fetchPokemon(selectedType);
+        const data = await fetchPokemon(selectedType, searchQuery);
         setPokemon(data);
         setLoading(false);
       } catch (error) {
@@ -19,7 +21,7 @@ export default function usePokemon() {
       }
     };
     loadData();
-  }, [selectedType]);
+  }, [selectedType, searchQuery]);
 
   useEffect(() => {
     const loadTypes = async () => {
@@ -34,5 +36,5 @@ export default function usePokemon() {
     loadTypes();
   }, []);
 
-  return [loading, pokemon, types, setSelectedType];
+  return [loading, pokemon, types, setSelectedType, setSearchQuery];
 }

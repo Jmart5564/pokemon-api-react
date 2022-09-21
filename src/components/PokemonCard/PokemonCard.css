@@ -1,14 +1,14 @@
-
 .pokemon {
     display: flex;
     flex-direction: column;
     height: 250px;
     width: 200px;
     text-align: center;
-    
+    text-transform: capitalize;
+    color: white;
 }
 
-img {
+.pokemon img {
     height: 150px;
     object-fit: contain;
 }

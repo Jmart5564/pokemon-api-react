@@ -2,6 +2,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .pokemon-list {
@@ -14,6 +15,12 @@ main {
 .select {
     display: flex;
     justify-content: center;
+}
+
+audio {
+  display: flex;
+  justify-self: center;
+  padding-bottom: 20px;
 }
 
 select {

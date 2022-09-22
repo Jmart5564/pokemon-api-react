@@ -1,14 +1,23 @@
 .pokemon {
     display: flex;
     flex-direction: column;
-    height: 250px;
+    gap: 5px;
     width: 200px;
     text-align: center;
     text-transform: capitalize;
     color: white;
+    border: solid black 2px;
+    background-color: rgb(41, 40, 40);
+    padding-top: 15px;
+    padding-bottom: 30px;
 }
 
 .pokemon img {
     height: 150px;
     object-fit: contain;
+}
+
+.name-span {
+    font-size: 20px;
+    font-weight: bold;
 }

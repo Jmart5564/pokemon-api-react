@@ -1,0 +1,13 @@
+header {
+    position: relative;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Pokemon Solid';
+    /* color: rgb(250, 14, 53);
+    filter: drop-shadow(0px 0px 8px white); */
+    color: black;
+    -webkit-text-fill-color: rgb(194, 30, 30); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    background: none;
+}
